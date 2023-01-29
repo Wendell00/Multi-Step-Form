@@ -11,19 +11,19 @@ The designs were created to the following widths:
 
 ### Primary
 
-- Marine blue: hsl(213, 96%, 18%)
-- Purplish blue: hsl(243, 100%, 62%)
-- Pastel blue: hsl(228, 100%, 84%)
-- Light blue: hsl(206, 94%, 87%)
-- Strawberry red: hsl(354, 84%, 57%)
+- Marine blue: 	#02295a
+- Purplish blue: #473dff
+- Pastel blue: #adbeff
+- Light blue: #bfe2fd
+- Strawberry red: #ed3548
 
 ### Neutral
 
-- Cool gray: hsl(231, 11%, 63%)
-- Light gray: hsl(229, 24%, 87%)
-- Magnolia: hsl(217, 100%, 97%)
-- Alabaster: hsl(231, 100%, 99%)
-- White: hsl(0, 0%, 100%)
+- Cool gray: #9699ab
+- Light gray: #d6d9e6
+- Magnolia: #f0f6ff
+- Alabaster: #fafbff
+- White: #fff
 
 ## Typography
 

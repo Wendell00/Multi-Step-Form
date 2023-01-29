@@ -1,12 +1,19 @@
 import { useState } from 'react'
 import reactLogo from './assets/react.svg'
+import { YourInfo } from './pages/yourInfo/yourInfo'
+import { BrowserRouter, Route, Routes, Link } from 'react-router-dom'
 import './App.css'
 
 function App() {
 
   return (
-    <div className="bg-[#464646] w-screen h-screen">
-      
+    <div>
+      <BrowserRouter>
+      <Routes>
+        <Route path='/' element={<YourInfo/>} />
+      </Routes>
+      </BrowserRouter>
+  
     </div>
   )
 }
