@@ -1,19 +1,24 @@
-import { validatorName } from "../../../functions/step01/validatorName"
-import { useRef, useEffect, useState } from "react";
-import { validatorEmail } from "../../../functions/step01/validatorEmail";
+import { useRef } from "react";
 import { validatorForm } from "../../../functions/step01/validatorForm";
+import { useNavigate } from "react-router-dom";
+import { stepRecorder } from "../../../functions/stepRecorder";
 
 export const YourInfo = () =>{
 
-    const ref = useRef(null);
-    const ref2 = useRef(null);
-    const ref3 = useRef(null)
+    const refName = useRef(null);
+    const refEmail = useRef(null);
+    const refPhone = useRef(null)
+    const navigate = useNavigate();
 
     function handlerFormInfo(){
-        const inputName = ref.current;
-        const inputEmail = ref2.current;
-        const inputPhone = ref3.current;
-        validatorForm(inputName.value, inputEmail.value, inputPhone.value)
+        const inputName = refName.current;
+        const inputEmail = refEmail.current;
+        const inputPhone = refPhone.current;
+        if (validatorForm(inputName.value, inputEmail.value, inputPhone.value)){
+            stepRecorder(2)
+            navigate('/selectPlan')
+        }
+
     }
 
     return( 
@@ -24,19 +29,19 @@ export const YourInfo = () =>{
             <label className='text-[#02295a] text-sm mb-2 font-thin'>Name</label> 
             <label className='error-name text-[#ed3548] text-sm float-right font-bold'></label>
             <br/>
-            <input ref={ref} className="nameInput mb-4 w-full rounded-lg border-solid border border-gray-300 focus:border-[#] px-4 text-[#02295a] py-2 font-bold" 
+            <input ref={refName} className="nameInput mb-4 w-full rounded-lg border-solid border border-gray-300 focus:border-[#] px-4 text-[#02295a] py-2 font-bold" 
             type='text' placeholder='Wendell Borges'></input>
             <br/>
             <label className='text-[#02295a] text-sm mb-2 font-thin'>Email Adress</label>
             <label className='error-email text-[#ed3548] text-sm float-right font-bold'></label>
             <br/>
-            <input ref={ref2} className="mb-4 w-full rounded-lg border-solid border border-gray-300 focus:border-[#] px-4 text-[#02295a] py-2 font-bold" 
+            <input ref={refEmail} className="mb-4 w-full rounded-lg border-solid border border-gray-300 focus:border-[#] px-4 text-[#02295a] py-2 font-bold" 
             type='email' placeholder='contatoWendell@gmail.com'></input>
             <br/>
             <label className='text-[#02295a] text-sm mb-2 font-thin'>Phone Number</label>
             <label className='error-phone text-[#ed3548] text-sm float-right font-bold'></label>
             <br/>
-            <input ref={ref3} className="mb-4 w-full rounded-lg border-solid border border-gray-300 focus:border-[#] px-4 text-[#02295a] py-2 font-bold" 
+            <input ref={refPhone} className="mb-4 w-full rounded-lg border-solid border border-gray-300 focus:border-[#] px-4 text-[#02295a] py-2 font-bold" 
             type='tel' placeholder='11 99999-9999'></input>
         </form>
         <div className='flex justify-end items-end h-[60px]'>

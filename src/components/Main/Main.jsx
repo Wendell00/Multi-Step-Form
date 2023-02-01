@@ -1,10 +1,12 @@
 import { useState } from 'react'
 import React from 'react';
 import './Main.css'
-import { YourInfo } from './Your-Info/YourInfo';
-// import { SideBar } from "/src/multi-step-form-main/assets/images/bg-sidebar-desktop.svg"
+import { ChangePage } from '../../functions/changePage';
+import { stepRecorder } from '../../functions/stepRecorder';
+
 
 export const Main = () =>{
+
     return (
         <div className='w-screen h-screen flex justify-center items-center bg-[#f0f6ff]'>
             <main className='w-[960px] h-[520px] bg-[#fff] rounded-2xl shadow-2xl p-10'>
@@ -41,7 +43,7 @@ export const Main = () =>{
                             </li>
                         </ul>
                     </div>   
-                    <YourInfo /> {/* Para deixar flexível puxar uma função verificando o número do Step */}
+                    <ChangePage />
                 </div>
             </main>     
         </div>

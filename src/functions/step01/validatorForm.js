@@ -8,8 +8,14 @@ export const validatorForm = (name, email, phone) =>{
     const errorEmail = document.querySelector('.error-email')
     const errorPhone = document.querySelector('.error-phone')
 
-    errorName.innerHTML = validatorName(name)
-    console.log(validatorName(name))
-    errorEmail.innerHTML = validatorEmail(email)
-    errorPhone.innerHTML = validatorPhone(phone)
+    const nameValidation = validatorName(name)    
+    const emailValidation = validatorEmail(email)
+    const phoneValidation = validatorPhone(phone)  
+
+    errorName.innerHTML = nameValidation == true ? '' : nameValidation
+    errorEmail.innerHTML = emailValidation == true? '' : emailValidation
+    errorPhone.innerHTML = phoneValidation == true ? '' : phoneValidation
+
+    if(nameValidation, emailValidation, phoneValidation) return true
+    else return false
 }
