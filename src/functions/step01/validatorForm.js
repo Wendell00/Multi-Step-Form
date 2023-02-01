@@ -16,6 +16,6 @@ export const validatorForm = (name, email, phone) =>{
     errorEmail.innerHTML = emailValidation == true? '' : emailValidation
     errorPhone.innerHTML = phoneValidation == true ? '' : phoneValidation
 
-    if(nameValidation, emailValidation, phoneValidation) return true
+    if(typeof nameValidation == "boolean", typeof emailValidation == "boolean", typeof phoneValidation == "boolean") return true
     else return false
 }

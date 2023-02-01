@@ -13,8 +13,8 @@ function App() {
     <div>
       <BrowserRouter>
       <Routes>
-        <Route path='/' element={<YourInfo/>} />
-        <Route path='/selectPlan' element={<SelectPlan/>} />
+        <Route path='/asdsa' element={<YourInfo/>} />
+        <Route path='/' element={<SelectPlan/>} />
       </Routes>
       </BrowserRouter>
   
@@ -23,3 +23,5 @@ function App() {
 }
 
 export default App
+
+   
