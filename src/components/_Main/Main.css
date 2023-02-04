@@ -1,11 +1,5 @@
-* {
-    margin: 0;
-    padding: 0;
-}
-
 #sideBar{
     background-image: url("/multi-step-form-main/assets/images/bg-sidebar-desktop.svg");
     background-size: cover;
     background-position: center center;
 }
-

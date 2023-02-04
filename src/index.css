@@ -2,6 +2,8 @@
 @tailwind components;
 @tailwind utilities;
 
+@import url(./components/Select-Plan/selectPlan.css); /* Select-Plan CSS */
+
 @import url('https://fonts.googleapis.com/css2?family=Ubuntu:wght@400;500;700&display=swap');
 
 * {
@@ -9,4 +11,10 @@
   padding: 0;
   box-sizing: border-box;
   font-family: 'Ubuntu', sans-serif;
+}
+
+#sideBar{
+  background-image: url("/multi-step-form-main/assets/images/bg-sidebar-desktop.svg");
+  background-size: cover;
+  background-position: center center;
 }
