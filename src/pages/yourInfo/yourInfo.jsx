@@ -11,7 +11,7 @@ export const YourInfo = () => {
 
     return (
         <>
-            <Aside />
+            <Aside/>
 
             <div className='justify-self-center my-0 mx-auto h-auto py-8'>
                 <h2 className='text-[#02295a] text-2xl font-bold mb-2'>Personal Info</h2>
@@ -36,7 +36,7 @@ export const YourInfo = () => {
                         type='tel' placeholder='11 99999-9999'></input>
                 </form>
                 <div className='flex justify-end items-end h-[60px]'>
-                    <button className='py-3 px-5 bg-[#02295a] text-white font-bold rounded-lg' onClick={() => handlerFormInfo()}>Next Step</button>
+                    <button className='py-3 px-5 bg-[#02295a] text-white font-bold rounded-lg hover:bg-[#473dff]' onClick={() => handlerFormInfo()}>Next Step</button>
                 </div>
             </div>
         </>
