@@ -13,7 +13,7 @@ export const YourInfo = () => {
         <>
             <Aside/>
 
-            <div className='justify-self-center my-0 mx-auto h-auto py-8'>
+            <div className='justify-self-center my-0 mx-auto h-auto py-8 relative'>
                 <h2 className='text-[#02295a] text-2xl font-bold mb-2'>Personal Info</h2>
                 <p className='font-normal text-gray-400'>Please provide your name, email address, and phone number.</p>
                 <form className='mt-6'>
@@ -35,7 +35,7 @@ export const YourInfo = () => {
                     <input className="mb-4 w-full rounded-lg border-solid border border-gray-300 focus:border-[#] px-4 text-[#02295a] py-2 font-bold"
                         type='tel' placeholder='11 99999-9999'></input>
                 </form>
-                <div className='flex justify-end items-end h-[60px]'>
+                <div className='flex justify-end items-end h-[60px] absolute w-full bottom-[0px]'>
                     <button className='py-3 px-5 bg-[#02295a] text-white font-bold rounded-lg hover:bg-[#473dff]' onClick={() => handlerFormInfo()}>Next Step</button>
                 </div>
             </div>
