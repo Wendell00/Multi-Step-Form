@@ -11,6 +11,7 @@ export const SelectPlan = () => {
 
     function handleSelectPlan(param){
         setSelectedPlan(param)
+        console.log(param)
     }
 
     const navigate = useNavigate()
@@ -20,18 +21,17 @@ export const SelectPlan = () => {
         else navigate('/')
     }
 
-
     return (
         <>
             <Aside/>
 
-            <div className='justify-self-center my-0 mx-auto h-auto py-8'>
+            <div className='justify-self-center my-0 mx-auto h-full py-8'>
                 <h2 className='text-[#02295a] text-2xl font-bold mb-2'>Select your plan</h2>
                 <p className='font-normal text-gray-400'>You have the option oh monthly or yearly billing.</p>
                 <div>
                     <ul className="flex justify-between mt-4 w-[440px]">
                         <li >
-                            <div onClick={() => handleSelectPlan('arcade')} className={`relative border-[2px] border-solid border-gray-300 border-[1px] w-[120px] h-[130px] rounded-lg hover:border-[#473dff] 
+                            <div onClick={() => handleSelectPlan('arcade')} className={`relative border-[2px] border-solid border-[1px] w-[120px] h-[130px] rounded-lg hover:border-[#473dff] 
                         cursor-pointer ${selectedPlan === 'arcade' && 'border-[#473dff]'}`}>
                                 <img src="/multi-step-form-main/assets/images/icon-arcade.svg" className="mt-2 ml-2" />
                                 <div className="absolute bottom-0 ml-2 mb-2">
@@ -41,7 +41,7 @@ export const SelectPlan = () => {
                             </div>
                         </li>
                         <li>
-                            <div onClick={() => handleSelectPlan('advanced')} className={`relative border-[2px] border-solid border-gray-300 border-[1px] w-[120px] h-[130px] rounded-lg hover:border-[#473dff] 
+                            <div onClick={() => handleSelectPlan('advanced')} className={`relative border-[2px] border-solid border-[1px] w-[120px] h-[130px] rounded-lg hover:border-[#473dff] 
                         cursor-pointer ${selectedPlan === 'advanced' && 'border-[#473dff]'}`}>
                                 <img src="/multi-step-form-main/assets/images/icon-advanced.svg" className="mt-2 ml-2" />
                                 <div className="absolute bottom-0 ml-2 mb-2">
@@ -51,7 +51,7 @@ export const SelectPlan = () => {
                             </div>
                         </li>
                         <li>
-                            <div onClick={() => handleSelectPlan('pro')} className={`relative border-[2px] border-solid border-gray-300 border-[1px] w-[120px] h-[130px] rounded-lg hover:border-[#473dff] 
+                            <div onClick={() => handleSelectPlan('pro')} className={`relative border-[2px] border-solid  border-[1px] w-[120px] h-[130px] rounded-lg hover:border-[#473dff] 
                         cursor-pointer ${selectedPlan === 'pro' && 'border-[#473dff]'}`}>
                                 <img src="/multi-step-form-main/assets/images/icon-pro.svg" className="mt-2 ml-2" />
                                 <div className="absolute bottom-0 ml-2 mb-2">
@@ -65,8 +65,8 @@ export const SelectPlan = () => {
                 <div className='w-full h-[50px] bg-[#fff] mt-8 flex justify-center items-center text-[#9699ab]'>
                     <h2 className={`font-bold ${ !periodPlan && 'text-[#02295a]'}`}>Monthly</h2>
                     <label className="switch">
-                        <input onClick={() => setPeriodPlan(!periodPlan)} type={"checkbox"} id="inputSwitch"/>
-                        <span className="slider round"></span>
+                        <input onClick={() => {setPeriodPlan(!periodPlan)}} type={"checkbox"} id="inputSwitch" checked={periodPlan}/>
+                        <span className="slider round"> </span>
                     </label>
                     <h2 className={`font-bold ${ periodPlan && 'text-[#02295a]'}`}>Yearly</h2>
                 </div>
