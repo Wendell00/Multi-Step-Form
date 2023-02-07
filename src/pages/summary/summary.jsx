@@ -29,7 +29,7 @@ export const Summary = () => {
                 <h2 className='text-[#02295a] text-2xl font-bold mb-2'>Finishing Up</h2>
                 <p className='font-normal text-gray-400'>Double-check everything looks OK before confirming.</p>
                 <div>
-                    <div className='w-full h-auto bg-[#4d4d50] rounded-lg p-4 mt-8'>
+                    <div className='w-full h-auto bg-[#d6d9e6] rounded-lg p-4 mt-8'>
                         <div className='flex justify-between items-center mb-2'>
                             <div>
                                 <h1 className='text-[#02295a] font-bold'>{inputsInf.selectedPlan.name} ({inputsInf.periodPlan ? 'Yearly': 'Monthly'})</h1>
