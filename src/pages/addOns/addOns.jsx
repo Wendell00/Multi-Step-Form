@@ -28,7 +28,7 @@ export const AddOns = () => {
                     <ul className='w-[455px]'>
                         <li className='flex justify-between mt-2 w-full items-center border-[1px] border-solid border-[#473dff] rounded-lg p-2'>
                             <input type="checkbox" className='addCheck bg-[#473dff] justify-self-center ml-[15px]' onClick={() => {
-                                setInputsInf({...inputsInf, onlineService: {active: !inputsInf.onlineService.active}}) 
+                                setInputsInf({...inputsInf, onlineService: {active: !inputsInf.onlineService.active, price: 1}}) 
                                 }} defaultChecked={inputsInf.onlineService.active}/>
                             <div className='ml-[-93px]'>
                                 <p className='text-[#02295a] font-bold'>Online service</p>
@@ -38,7 +38,7 @@ export const AddOns = () => {
                         </li>
                         <li className='flex mt-2 justify-between w-full items-center border-[1px] border-solid border-[#473dff] rounded-lg p-2'>
                             <input type="checkbox" className='addCheck bg-[#473dff] justify-self-center ml-[15px]' onClick={() => {
-                                setInputsInf({...inputsInf, largerStorage: {active: !inputsInf.largerStorage.active}})}} defaultChecked={inputsInf.largerStorage.active}/>
+                                setInputsInf({...inputsInf, largerStorage: {active: !inputsInf.largerStorage.active, price: 2}})}} defaultChecked={inputsInf.largerStorage.active}/>
                             <div className='ml-[-125px]'>
                                 <p className='text-[#02295a] font-bold'>Larger storage</p>
                                 <p className='text-[#9699ab] font-thin'>Extra 1TB of cloud save</p>
@@ -47,7 +47,7 @@ export const AddOns = () => {
                         </li>
                         <li className='flex mt-2 justify-between w-full items-center border-[1px] border-solid border-[#473dff] rounded-lg p-2'>
                             <input type="checkbox" className='addCheck checked:bg-[#473dff] justify-self-center ml-[15px]' onClick={() => {
-                                setInputsInf({...inputsInf, customizableProfile: {active: !inputsInf.customizableProfile.active}})}} defaultChecked={inputsInf.customizableProfile.active}/>
+                                setInputsInf({...inputsInf, customizableProfile: {active: !inputsInf.customizableProfile.active, price: 2}})}} defaultChecked={inputsInf.customizableProfile.active}/>
                             <div className='ml-[-85px]'>
                                 <p className='text-[#02295a] font-bold'>Customizable Profile</p>
                                 <p className='text-[#9699ab] font-thin'>Custom theme on your profile</p>

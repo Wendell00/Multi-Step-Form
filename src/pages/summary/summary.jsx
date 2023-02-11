@@ -5,7 +5,24 @@ import { FormContext } from '../../contexts/FormContext'
 import { Aside } from '../../components/Aside'
 import { useNavigate } from 'react-router-dom'
 
+const SummaryOns = (props) =>{
+
+    const { inputsInf, setInputsInf } = useContext(FormContext)
+
+    if(props.inf.active){
+        return(
+            <>
+                <div className='flex justify-between items-center mt-4'>
+                        <h1 className='text-[#9699ab] font-bold'>{props.title}</h1>
+                        <p className='text-[#02295a] font-thin'>${inputsInf.periodPlan ? `${props.inf.price * 10}/yr` : `${props.inf.price}/mo`}</p>
+                 </div>
+            </>
+        )
+    }
+}
+
 export const Summary = () => {
+
     const { inputsInf, setInputsInf } = useContext(FormContext)
 
     function handlePlanValue(){
@@ -20,6 +37,23 @@ export const Summary = () => {
         else navigate('/add-ons')
     }
 
+    function calculateTotalPrice(param){
+        let total = 0
+        if(param.active){
+            total = param.price
+            if(inputsInf.periodPlan){
+                total *= 10
+            }
+        }
+        return total
+    }
+
+    function totalPrice(){
+        let total = calculateTotalPrice(inputsInf.onlineService)
+        total += calculateTotalPrice(inputsInf.largerStorage)
+        total += calculateTotalPrice(inputsInf.customizableProfile)
+        return total
+    }
 
     return (
         <>
@@ -40,24 +74,14 @@ export const Summary = () => {
                             </div>
                         </div>
                         <div className=' items-center border-t-2 border-[#9699ab]'>
-                            <div className='flex justify-between items-center mt-4'>
-                                <h1 className='text-[#9699ab] font-bold'>Online Service</h1>
-                                <p className='text-[#02295a] font-thin'>$1/mo</p>
-                            </div>
-                            <div className='flex justify-between items-center mt-4'>
-                                <h1 className='text-[#9699ab] font-bold'>Larger Storage</h1>
-                                <p className='text-[#02295a] font-thin'>$2/mo</p>
-                            </div>
-                            <div className='flex justify-between items-center mt-4'>
-                                <h1 className='text-[#9699ab] font-bold'>Larger Storage</h1>
-                                <p className='text-[#02295a] font-thin'>$2/mo</p>
-                            </div>
-                            
+                            <SummaryOns inf={inputsInf.onlineService} title='Online Service'/>
+                            <SummaryOns inf={inputsInf.largerStorage} title='Larger Storage'/>
+                            <SummaryOns inf={inputsInf.customizableProfile} title='Customizable Profile'/>
                         </div>
                     </div>
                     <div className='flex justify-between items-center mt-6 px-4'>
-                        <p className='text-[#9699ab] font-thin'>Total (per month)</p>
-                        <h1 className='text-[#473dff] text-xl font-bold'>+$12mo</h1>
+                        <p className='text-[#9699ab] font-thin'>Total (per {inputsInf.periodPlan ? 'yearly': 'monthly'})</p>
+                        <h1 className='text-[#473dff] text-xl font-bold'>+${handlePlanValue()+totalPrice()}/{inputsInf.periodPlan ? 'yr' : 'mo'}</h1>
                     </div>
                     <div className='flex justify-between items-center mt-8 absolute w-full bottom-[0px]'>
                         <h1 className='cursor-pointer self-end font-bold text-[#9699ab] hover:text-[#02295a]' onClick={() => handlerFormInfo(false)}>Go Back</h1>
