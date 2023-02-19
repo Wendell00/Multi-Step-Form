@@ -9,6 +9,7 @@ import { AddOns } from './pages/addOns/addOns'
 import { FormContextProvider } from './contexts/FormContext'
 import { LayoutDefault } from './layouts/LayoutDefault'
 import { Summary } from './pages/summary/summary'
+import { TestPage } from './pages/teste/teste'
 
 function App() {
   return (
@@ -21,6 +22,7 @@ function App() {
               <Route path='/selectPlan' element={<SelectPlan />} />
               <Route path='/add-ons' element={<AddOns />} />
               <Route path='/summary' element={<Summary />} />
+              <Route path='/teste' element={<TestPage />} />
             </Route>
           </Routes>
         </FormContextProvider>
