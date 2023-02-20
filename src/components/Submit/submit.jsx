@@ -1,3 +1,5 @@
+import Icon from '/multi-step-form-main/assets/images/icon-thank-you.svg'
+
 export const Submit = () => {
 
     return (
@@ -7,7 +9,7 @@ export const Submit = () => {
                 
                 <div className="w-auto h-full my-[50px] md:mx-0 md:my-[100px]">
                     <div className="flex justify-center items-center scale-[0.7]">
-                        <img src="/multi-step-form-main/assets/images/icon-thank-you.svg" alt="" srcset="" />
+                        <img src={Icon} alt="" srcset="" />
                     </div>
                     <div className="flex justify-center items-center">
                         <h2 className='text-[#02295a] text-3xl font-bold mb-2'>Thank you!</h2>
