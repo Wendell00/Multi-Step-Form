@@ -6,7 +6,7 @@ const inputsObject = {
   periodPlan: false,
   selectedPlan: {
     name: 'Arcade',
-    price: 0
+    price: 9
   },
   onlineService: {
     active: false,
