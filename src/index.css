@@ -13,8 +13,15 @@
   font-family: 'Ubuntu', sans-serif;
 }
 
+
 #sideBar{
   background-image: url("/multi-step-form-main/assets/images/bg-sidebar-desktop.svg");
+  background-size: cover;
+  background-position: center center;
+}
+
+#sideBarMobile{
+  background-image: url("/multi-step-form-main/assets/images/bg-sidebar-mobile.svg");
   background-size: cover;
   background-position: center center;
 }
