@@ -5,7 +5,7 @@ export const FormContext = createContext()
 const inputsObject = {
   periodPlan: false,
   selectedPlan: {
-    name: 'null',
+    name: 'Arcade',
     price: 0
   },
   onlineService: {
@@ -24,10 +24,11 @@ const inputsObject = {
 
 export function FormContextProvider({ children }) {
   const [inputsInf, setInputsInf] = useState(inputsObject)
+  const [submitInf, setSubmitInf] = useState(false)
 
   return (
     <FormContext.Provider value={{ 
-      inputsInf, setInputsInf}}>
+      inputsInf, setInputsInf, submitInf, setSubmitInf}}>
       {children}
     </FormContext.Provider>
   )

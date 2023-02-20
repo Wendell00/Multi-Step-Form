@@ -1,4 +1,4 @@
-import { useContext } from 'react'
+import { useContext, useEffect } from 'react'
 import { FormContext } from '../../contexts/FormContext'
 import { Aside } from '../../components/Aside'
 import { useNavigate } from 'react-router-dom'
@@ -8,7 +8,7 @@ export const AddOns = () => {
 
     const isMobile = useMediaQuery({ query: '(max-width: 768px)' });
 
-    const { inputsInf, setInputsInf } = useContext(FormContext)
+    const { inputsInf, setInputsInf, submitInf } = useContext(FormContext)
 
     function handleSelectPlan(param){
         setSelectedPlan(param)
@@ -20,6 +20,12 @@ export const AddOns = () => {
         if(param) navigate('/summary')
         else navigate('/selectPlan')
     }
+
+    useEffect(() =>{
+        if(!submitInf){
+            navigate('/')
+        }
+    }, [])
 
     return (
         <>

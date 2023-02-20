@@ -1,4 +1,4 @@
-import { useContext} from 'react'
+import { useContext, useState, useEffect} from 'react'
 import { FormContext } from '../../contexts/FormContext'
 import { Aside } from '../../components/Aside'
 import { useNavigate } from 'react-router-dom'
@@ -7,7 +7,7 @@ import { useMediaQuery } from 'react-responsive'
 export const SelectPlan = () => {
     const isMobile = useMediaQuery({ query: '(max-width: 768px)' });
 
-    const { inputsInf, setInputsInf } = useContext(FormContext)
+    const { inputsInf, setInputsInf, submitInf } = useContext(FormContext)
 
     function handleSelectPlan(plan, value){
         setInputsInf({...inputsInf, selectedPlan: {name: plan, price: value}})
@@ -19,6 +19,12 @@ export const SelectPlan = () => {
         if(param) navigate('/add-ons')
         else navigate('/')
     }
+
+    useEffect(() =>{
+        if(!submitInf){
+            navigate('/')
+        }
+    }, [])
     
     return (
         <>
@@ -31,7 +37,7 @@ export const SelectPlan = () => {
                     <ul className="md:flex md:justify-between mt-4 w-full md:w-[440px] ">
                         <li >
                             <div onClick={() => handleSelectPlan('Arcade', 9)} className={`relative border-solid border-[2px] md:border-[1px] w-full h-[80px] md:w-[130px] md:h-[160px] rounded-lg hover:border-[#473dff] 
-                        cursor-pointer ${inputsInf.selectedPlan.name === 'Arcade' && 'border-[#473dff]'}`}>
+                        cursor-pointer ${inputsInf.selectedPlan.name === 'Arcade' && 'border-[#473dff] bg-white'}`}>
                                 <img src="/multi-step-form-main/assets/images/icon-arcade.svg" className="mt-4 md:mt-2 ml-2" />
                                 <div className="absolute left-[60px] md:left-[0px] bottom-0 ml-2 md:mb-2 mb-3">
                                     <h2 className="md:font-thin font-bold text-[#02295a]">Arcade</h2>
@@ -41,7 +47,7 @@ export const SelectPlan = () => {
                         </li>
                         <li>
                             <div onClick={() => handleSelectPlan('Advanced', 12)} className={`relative border-solid border-[2px] md:border-[1px] w-full h-[80px] md:w-[130px] md:h-[160px] rounded-lg hover:border-[#473dff] 
-                        cursor-pointer ${inputsInf.selectedPlan.name === 'Advanced' && 'border-[#473dff]'}`}>
+                        cursor-pointer ${inputsInf.selectedPlan.name === 'Advanced' && 'border-[#473dff] bg-white'}`}>
                                 <img src="/multi-step-form-main/assets/images/icon-advanced.svg" className="mt-4 md:mt-2 ml-2 " />
                                 <div className="absolute left-[60px] md:left-[0px] bottom-0 ml-2 md:mb-2 mb-3">
                                     <h2 className="md:font-thin font-bold text-[#02295a]">Advanced</h2>
@@ -51,7 +57,7 @@ export const SelectPlan = () => {
                         </li>
                         <li>
                             <div onClick={() => handleSelectPlan('Pro', 15)} className={`relative border-solid  border-[2px] md:border-[1px] w-full h-[80px] md:w-[130px] md:h-[160px] rounded-lg hover:border-[#473dff] 
-                        cursor-pointer ${inputsInf.selectedPlan.name === 'Pro' && 'border-[#473dff]'}`}>
+                        cursor-pointer ${inputsInf.selectedPlan.name === 'Pro' && 'border-[#473dff] bg-white'}`}>
                                 <img src="/multi-step-form-main/assets/images/icon-pro.svg" className="mt-4 md:mt-2 ml-2" />
                                 <div className="absolute left-[60px] md:left-[0px] bottom-0 ml-2 md:mb-2 mb-3">
                                     <h2 className="md:font-thin font-bold text-[#02295a]">Pro</h2>

@@ -26,7 +26,7 @@ export const Summary = () => {
 
     const isMobile = useMediaQuery({ query: '(max-width: 768px)' });
 
-    const { inputsInf, setInputsInf } = useContext(FormContext)
+    const { inputsInf, submitInf } = useContext(FormContext)
 
     function handlePlanValue(){
         const pricePlan = inputsInf.periodPlan ? inputsInf.selectedPlan.price * 10 : inputsInf.selectedPlan.price
@@ -66,6 +66,12 @@ export const Summary = () => {
         if(!isMobile && submitConfirm) return true
         else false
     }
+
+    useEffect(() =>{
+        if(!submitInf){
+            navigate('/')
+        }
+    }, [])
 
     return (
         <>

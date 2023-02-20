@@ -3,7 +3,7 @@ export const Submit = () => {
     return (
         <>
             <div className='h-[400px] p-8 absolute right-[3%] bg-white w-[94%] mt-[100px] rounded-lg
-            md:relative md:h-full md:py-8 md:my-0 md:mx-auto md:[450px] md:px-8 md-justify-self-center md:right-0'>
+            md:relative md:h-full md:py-8 md:my-0 md:mx-auto md:w-[580px] md:px-8 md-justify-self-center md:right-0'>
                 
                 <div className="w-auto h-full my-[50px] md:mx-0 md:my-[100px]">
                     <div className="flex justify-center items-center scale-[0.7]">
